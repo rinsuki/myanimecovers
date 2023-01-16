@@ -1,0 +1,27 @@
+{
+    "name": "myanimecovers",
+    "packageManager": "yarn@3.3.1",
+    "type": "module",
+    "scripts": {
+        "prettier": "prettier .",
+        "eslint": "eslint .",
+        "lint": "yarn prettier -c && yarn eslint",
+        "fix": "yarn prettier -w && yarn eslint --fix"
+    },
+    "devDependencies": {
+        "@rinsuki/eslint-config": "^2.0.0",
+        "@rinsuki/prettier-config": "^1.5.0",
+        "eslint": "^8.32.0",
+        "prettier": "^2.8.3",
+        "typescript": "^4.9.4"
+    },
+    "prettier": "@rinsuki/prettier-config",
+    "eslintConfig": {
+        "extends": "@rinsuki",
+        "parserOptions": {
+            "project": [
+                "./tsconfig.json"
+            ]
+        }
+    }
+}
