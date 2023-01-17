@@ -14,7 +14,11 @@ const config = {
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
     },
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [
+        new HtmlWebpackPlugin({
+            publicPath: "/",
+        }),
+    ],
     devServer: {},
 }
 
