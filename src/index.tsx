@@ -1,6 +1,8 @@
 import { ApolloClient, InMemoryCache, useQuery } from "@apollo/client"
 import React from "react"
 import { createRoot } from "react-dom/client"
+import { RouterProvider, useParams } from "react-router"
+import { createBrowserRouter } from "react-router-dom"
 
 import { GET_ANIME_LIST } from "./queries"
 
@@ -42,8 +44,10 @@ const tierToCount = (tier: TIER) => {
 }
 
 const App: React.FC = props => {
+    const params = useParams()
+    if (params.userName == null) return <div>userName is null...</div>
     const { loading, error, data } = useQuery(GET_ANIME_LIST, {
-        variables: { userName: "rinsuki" },
+        variables: { userName: params.userName },
         client,
     })
     if (loading) return <div>Loading...</div>
@@ -186,10 +190,26 @@ const App: React.FC = props => {
     )
 }
 
+const router = createBrowserRouter([
+    {
+        path: "/@:userName",
+        element: <App />,
+    },
+    {
+        path: "/",
+        element: (
+            <div style={{ margin: 8 }}>
+                <h1>myanimecovers</h1>
+                <p>Usage: /@anilist_username</p>
+            </div>
+        ),
+    },
+])
+
 const app = document.createElement("div")
 app.id = "app"
 document.body.appendChild(app)
-createRoot(app).render(<App />)
+createRoot(app).render(<RouterProvider router={router} />)
 
 window.addEventListener("resize", () => {
     app.style.setProperty("--vh", `${window.innerHeight}px`)
