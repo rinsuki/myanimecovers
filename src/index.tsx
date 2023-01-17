@@ -164,6 +164,7 @@ const App: React.FC = props => {
                                                 {
                                                     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                                                     "--tier": tierToCss(tier).toString(),
+                                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                                 } as any
                                             }
                                             rel="noreferrer"
