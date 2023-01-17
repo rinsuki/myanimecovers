@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client"
 import { RouterProvider, useParams } from "react-router"
 import { createBrowserRouter } from "react-router-dom"
 
+import { CoolThumbnail } from "./cool-thumbnai"
 import { GET_ANIME_LIST } from "./queries"
 
 import "./style.scss"
@@ -173,10 +174,10 @@ const App: React.FC = props => {
                                             }
                                             rel="noreferrer"
                                         >
-                                            <img
+                                            <CoolThumbnail
                                                 className="cover-image"
                                                 src={entry.coverImage!.extraLarge!}
-                                                loading="lazy"
+                                                lazy
                                             />
                                         </a>
                                     )

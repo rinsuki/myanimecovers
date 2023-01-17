@@ -1,3 +1,5 @@
+@import "modern-normalize/modern-normalize.css";
+
 body {
     margin: 0;
 }
@@ -67,7 +69,8 @@ body {
 }
 
 .cover-image {
-    height: calc(calc(calc(calc(100vh - 8em) / 4) * var(--tier)) - 1em);
-    aspect-ratio: 2 / 3;
+    --h: calc(calc(calc(calc(100vh - 8em) / 4) * var(--tier)) - 1em);
+    height: var(--h);
+    width: calc(calc(var(--h) / 3) * 2);
     object-fit: cover;
 }
