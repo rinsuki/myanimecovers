@@ -1,3 +1,4 @@
 dist
 .yarn
 .pnp.*
+src/__generated__/*

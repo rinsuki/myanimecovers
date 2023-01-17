@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+}
+
+#app {
+    height: 100%;
+}
+
+.section-wrapper {
+    display: flex;
+}
+
+.section-year {
+    display: inline-flex;
+    position: relative;
+    > .year-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        text-align: lefet;
+        height: 0 !important;
+        line-height: 100%;
+        > h2 {
+            display: inline-block;
+            position: sticky;
+            font-size: 3rem;
+            line-height: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0.5em;
+        }
+    }
+}
+
+.section-season {
+    writing-mode: vertical-lr;
+    // height: 100vh;
+    height: calc(var(--vh) - 1rem);
+    box-sizing: border-box;
+    padding-top: 6rem;
+    > * {
+        display: inline;
+    }
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.season {
+    &-winter {
+        background-color: hsl(0, 0%, 95%);
+    }
+    &-spring {
+        background-color: hsl(330, 100%, 97.5%);
+    }
+    &-summer {
+        background-color: hsl(120, 100%, 95%);
+    }
+    &-fall {
+        background-color: hsl(30, 100%, 95%);
+    }
+}
+
+.section-season > a {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+.cover-image {
+    height: calc(calc(calc(calc(100vh - 8em) / 4) * var(--tier)) - 1em);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
