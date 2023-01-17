@@ -192,7 +192,7 @@ const App: React.FC = props => {
 
 const router = createBrowserRouter([
     {
-        path: "/@:userName",
+        path: "/anilist/:userName",
         element: <App />,
     },
     {
@@ -200,7 +200,7 @@ const router = createBrowserRouter([
         element: (
             <div style={{ margin: 8 }}>
                 <h1>myanimecovers</h1>
-                <p>Usage: /@anilist_username</p>
+                <p>Usage: /anilist/username</p>
             </div>
         ),
     },
