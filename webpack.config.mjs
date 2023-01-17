@@ -19,7 +19,9 @@ const config = {
             publicPath: "/",
         }),
     ],
-    devServer: {},
+    devServer: {
+        historyApiFallback: true,
+    },
 }
 
 export default config
