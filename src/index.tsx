@@ -78,6 +78,7 @@ const App: React.FC = props => {
             return {
                 ...a,
                 score: a.score == null || a.score === 0 ? 5 : a.score,
+                scoreOrig: a.score === 0 ? null : a.score,
                 ...a.media,
                 seasonYear: a.media.seasonYear,
                 season: a.media.season,
@@ -164,6 +165,11 @@ const App: React.FC = props => {
                                             key={entry.id}
                                             target="_blank"
                                             href={`https://anilist.co/anime/${entry.id}`}
+                                            title={`${entry.title!.native!}${
+                                                entry.scoreOrig == null
+                                                    ? ""
+                                                    : ` (${entry.scoreOrig})`
+                                            }`}
                                             style={
                                                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                                                 {
