@@ -6225,13 +6225,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"modern-normalize@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "modern-normalize@npm:1.1.0"
-  checksum: edfd40650bd7250eb4761651886a02ca3c524effca41b9832932eab9ccf9f2cfa7e5da8491c7c8bc2d58e1696e5e765adebeaf90cd9d3376444bd6bc0b0f2c99
-  languageName: node
-  linkType: hard
-
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -6288,7 +6281,6 @@ __metadata:
     eslint: ^8.32.0
     graphql: ^16.6.0
     html-webpack-plugin: ^5.5.0
-    modern-normalize: ^1.1.0
     prettier: ^2.8.3
     react: ^18.2.0
     react-dom: ^18.2.0
