@@ -71,6 +71,6 @@ body {
 .cover-image {
     --h: calc(calc(calc(calc(100vh - 8em) / 4) * var(--tier)) - 1em);
     height: var(--h);
-    width: calc(calc(var(--h) / 3) * 2);
+    width: calc(calc(var(--h) / 7) * 5);
     object-fit: cover;
 }
