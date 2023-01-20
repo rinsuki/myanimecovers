@@ -159,39 +159,44 @@ const App: React.FC = props => {
                                     ) {
                                         tier = lastTier
                                     }
+                                    let shouldChangeLine = false
                                     // 最後のtier更新
                                     if (lastTier === tier) {
                                         lastTierCount++
                                     } else {
+                                        if (lastTier === 2 || tier === 2) shouldChangeLine = true
                                         lastTier = tier
                                         lastTierCount = 1
                                     }
                                     return (
-                                        <a
-                                            key={entry.id}
-                                            target="_blank"
-                                            href={`https://anilist.co/anime/${entry.id}`}
-                                            title={`${entry.title!.native!}${
-                                                entry.scoreOrig == null
-                                                    ? ""
-                                                    : ` (${entry.scoreOrig})`
-                                            }`}
-                                            style={
-                                                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                                                {
+                                        <>
+                                            {shouldChangeLine && <br />}
+                                            <a
+                                                key={entry.id}
+                                                target="_blank"
+                                                href={`https://anilist.co/anime/${entry.id}`}
+                                                title={`${entry.title!.native!}${
+                                                    entry.scoreOrig == null
+                                                        ? ""
+                                                        : ` (${entry.scoreOrig})`
+                                                }`}
+                                                style={
                                                     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                                                    "--tier": tierToCss(tier).toString(),
-                                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                                } as any
-                                            }
-                                            rel="noreferrer"
-                                        >
-                                            <CoolThumbnail
-                                                className="cover-image"
-                                                src={entry.coverImage!.extraLarge!}
-                                                lazy
-                                            />
-                                        </a>
+                                                    {
+                                                        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                                                        "--tier": tierToCss(tier).toString(),
+                                                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                    } as any
+                                                }
+                                                rel="noreferrer"
+                                            >
+                                                <CoolThumbnail
+                                                    className="cover-image"
+                                                    src={entry.coverImage!.extraLarge!}
+                                                    lazy
+                                                />
+                                            </a>
+                                        </>
                                     )
                                 })}
                             </div>
