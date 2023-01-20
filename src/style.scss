@@ -1,3 +1,5 @@
+@use "sass:math";
+
 body {
     margin: 0;
     writing-mode: vertical-lr;
@@ -64,6 +66,8 @@ body {
 .cover-image {
     --h: calc(calc(calc(calc(100vh - 8em) / 4) * var(--tier)) - 1em);
     height: var(--h);
-    width: calc(calc(var(--h) / 7) * 5);
+    width: calc(var(--h) / math.sqrt(2));
+    // CSS の sqrt は全然まだ使えない https://caniuse.com/mdn-css_types_sqrt
+    // width: calc(var(--h) / sqrt(2));
     object-fit: cover;
 }
