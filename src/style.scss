@@ -1,17 +1,13 @@
 body {
     margin: 0;
+    writing-mode: vertical-lr;
 }
 
 #app {
     height: 100%;
 }
 
-.section-wrapper {
-    display: flex;
-}
-
 .section-year {
-    display: inline-flex;
     position: relative;
     > .year-wrapper {
         position: absolute;
@@ -29,13 +25,12 @@ body {
             left: 0;
             margin: 0;
             padding: 0.5em;
+            writing-mode: horizontal-tb;
         }
     }
 }
 
 .section-season {
-    writing-mode: vertical-lr;
-    // height: 100vh;
     height: calc(var(--vh) - 1rem);
     box-sizing: border-box;
     padding-top: 6rem;
