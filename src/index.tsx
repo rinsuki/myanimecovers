@@ -155,7 +155,8 @@ const App: React.FC = props => {
                                     // もうちょっとで数のキリが良くなる時の強制昇格
                                     if (
                                         lastTier !== tier &&
-                                        lastTierCount % tierToCount(lastTier)
+                                        lastTierCount % tierToCount(lastTier) &&
+                                        entry.score >= 5
                                     ) {
                                         tier = lastTier
                                     }
