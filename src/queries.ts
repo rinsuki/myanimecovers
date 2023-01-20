@@ -16,7 +16,7 @@ export const GET_ANIME_LIST = gql(/* GraphQL */ `
             lists {
                 entries {
                     status
-                    score
+                    score(format: POINT_10_DECIMAL)
                     media {
                         id
                         idMal
