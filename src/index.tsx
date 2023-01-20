@@ -144,9 +144,15 @@ const App: React.FC = props => {
                             >
                                 {season.entries.map(entry => {
                                     let tier: TIER = entry.score >= 9 ? 3 : entry.score >= 8 ? 2 : 1
-                                    if (season.entries.length <= 2 && tier === 2) {
-                                        tier = 1
+                                    // 数が少ない時の強制昇格
+                                    // スコアがある程度良くない作品が混じっていたら昇格しない
+                                    if ((season.entries.at(-1)?.score ?? 5) >= 5) {
+                                        // tier 3 まで昇格するのは微妙だった
+                                        if (season.entries.length <= 3) {
+                                            tier = 2
+                                        }
                                     }
+                                    // もうちょっとで数のキリが良くなる時の強制昇格
                                     if (
                                         lastTier !== tier &&
                                         lastTierCount % tierToCount(lastTier)
