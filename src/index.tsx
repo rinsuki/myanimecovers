@@ -165,7 +165,12 @@ const App: React.FC = props => {
                                     if (lastTier === tier) {
                                         lastTierCount++
                                     } else {
-                                        if (lastTier === 2 || tier === 2) shouldChangeLine = true
+                                        if (
+                                            lastTier === 2 ||
+                                            (tier === 2 &&
+                                                lastTierCount % tierToCount(lastTier) > 0)
+                                        )
+                                            shouldChangeLine = true
                                         lastTier = tier
                                         lastTierCount = 1
                                     }
