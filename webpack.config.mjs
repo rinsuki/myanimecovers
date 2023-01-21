@@ -17,6 +17,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             publicPath: "/",
+            title: "myanimecovers",
         }),
     ],
     devServer: {
