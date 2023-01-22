@@ -7,7 +7,7 @@ export const CoolThumbnail: React.FC<{ className: string; lazy: boolean; src: st
     const [showImage, setShowImage] = useState(!props.lazy)
     const { ref, inView } = useInView({
         triggerOnce: true,
-        rootMargin: "2000px 0px",
+        rootMargin: "100vh 100vw",
     })
     if (inView && !showImage) setShowImage(true)
 
